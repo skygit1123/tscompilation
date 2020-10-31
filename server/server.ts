@@ -1,5 +1,6 @@
 import * as express from "express";
-import {Question} from "../@types/Question";
+import * as path from "path";
+import { Question } from "../@types/Question";
 
 
 const questions: Question[] = [
@@ -19,3 +20,7 @@ console.log("Listening on port " + port);
 app.get("/questions", (_req, res)=> {
     res.json(questions);
 });  
+
+app.get("/main.js", (_req, res) => {
+    res.sendFile(path.resolve(__dirname,"..", "client", "client.js"));
+});
