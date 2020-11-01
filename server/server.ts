@@ -2,7 +2,6 @@ import * as express from "express";
 import * as path from "path";
 import { Question } from "../@types/Question";
 
-
 const questions: Question[] = [
 {
     title: "How to login",
@@ -18,6 +17,7 @@ app.listen(port);
 console.log("Listening on port " + port);
 
 app.get("/questions", (_req, res)=> {
+    debugger;
     res.json(questions);
 });  
 
